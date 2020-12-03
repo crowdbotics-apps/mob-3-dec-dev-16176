@@ -23,16 +23,15 @@ export default class Blank extends React.Component {
     }
   }
 
-  state = { CheckBox_4: true, Switch_5: true }
+  state = {
+    CheckBox_4: true,
+    Switch_5: true,
+    CheckBox_6: true,
+    CheckBox_7: true
+  }
 
   render = () => (
-    <ImageBackground
-      source={{
-        uri:
-          "https://crowdbotics-slack-dev.s3.amazonaws.com/media/project_component_resources/file_example_JPG_100kB_rcSSq0S.jpg"
-      }}
-      style={styles.ImageBackground_1}
-    >
+    <ImageBackground style={styles.ImageBackground_1}>
       <Text>Sample text content</Text>
       <Button title="Press me!" onPress={() => alert("Pressed!")} />
       <CheckBox
@@ -48,6 +47,19 @@ export default class Blank extends React.Component {
         value={this.state.Switch_5}
         onValueChange={nextChecked => this.setState({ Switch_5: nextChecked })}
       />
+      <CheckBox
+        title="Radio button"
+        checkedIcon="dot-circle-o"
+        uncheckedIcon="circle-o"
+        checked={this.state.CheckBox_6}
+        onPress={nextChecked => this.setState({ CheckBox_6: nextChecked })}
+      />
+      <CheckBox
+        title="Checkbox"
+        checked={this.state.CheckBox_7}
+        onPress={nextChecked => this.setState({ CheckBox_7: nextChecked })}
+      />
+      <Icon name="address-card" />
     </ImageBackground>
   )
 }
@@ -57,5 +69,8 @@ const styles = StyleSheet.create({
   Text_2: {},
   Button_3: {},
   CheckBox_4: {},
-  Switch_5: { alignSelf: "flex-start" }
+  Switch_5: { alignSelf: "flex-start" },
+  CheckBox_6: {},
+  CheckBox_7: {},
+  Icon_8: {}
 })
