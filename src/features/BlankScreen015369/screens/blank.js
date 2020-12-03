@@ -31,7 +31,13 @@ export default class Blank extends React.Component {
   }
 
   render = () => (
-    <ImageBackground style={styles.ImageBackground_1}>
+    <ImageBackground
+      source={{
+        uri:
+          "https://crowdbotics-slack-dev.s3.amazonaws.com/media/project_component_resources/file_example_JPG_100kB_rcSSq0S.jpg"
+      }}
+      style={styles.ImageBackground_1}
+    >
       <Text>Sample text content</Text>
       <Button title="Press me!" onPress={() => alert("Pressed!")} />
       <CheckBox
@@ -65,7 +71,15 @@ export default class Blank extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  ImageBackground_1: { backgroundSize: "stretch" },
+  ImageBackground_1: {
+    borderStyle: "dotted",
+    borderWidth: 3,
+    borderLeftWidth: 3,
+    borderRightWidth: 3,
+    borderTopWidth: 3,
+    borderBottomWidth: 3,
+    backgroundSize: "stretch"
+  },
   Text_2: {},
   Button_3: {},
   CheckBox_4: {},
